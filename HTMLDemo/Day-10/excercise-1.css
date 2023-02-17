@@ -3,35 +3,36 @@
     margin: 0;
     padding: 0;
 }
-
+:root{
+    --primary-color:#eee;
+    --secondary-color:rgb(194,21,233);
+}
 .heroImage{
-    background: #eee;
+    background: var (--primary-color);
     padding: 30px 50px;
     border: 1px solid #cecece;
-    margin-right: 30px;
-    margin-top: 30px;
-
+    margin-bottom: 30px;
 }
 
 .heroImage .heroImage-container{
     height: 30px;
     border: 1px red solid;
     margin-left: 5px;
-   
   }
 
 .heroImage > section{
    display: inline-block;
    font-size: 18px;
-   color: #000;
-   width: 50%;
+   color: var(--secondary-color);
 }
-
+.heroImage .heroImage-content{
+    margin: 50px;
+}
 
 
 .heroImage .heroImage-content h2{
     font-size: 32px;
-    color: #390fd1;
+    /*color: #390fd1;*/
   }
 
   .heroImage-content ul li{
