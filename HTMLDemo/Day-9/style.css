@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Roboto';
+   
+}
+
+h1 {
+  color: black;
+  font-style: normal;
+  text-align: center;
+  font-size: 16px;
+}
+
+h1 + p {
+    color: #181bd3;
+}
+
+h2{
+    font-size: 500;
+    
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline overline double;
+    color:black;
+    text-align: center;
+    letter-spacing: -1px;
+    text-underline-offset: 10px;
+    
+}
+
+p{
+   
+    font-weight: 400;
+    line-height: 28px;
+    
+}
+
+section > p {
+    font-style: normal;
+}
+
+
+input[type=text]{
+    border: 4px solid orange;
+}
+
+a {
+    color: red;
+}
+
+a[href="http://google.com"]{
+    font-size: 24px;
+    color: aqua;
+}
+
+a[href$=".pdf"]{
+    font-size: 24px;
+    color:purple;
+}
+
+a[href*=".jpeg"]{
+    font-size: 24px;
+    color:greenyellow;
+}
+
+div{
+    border: 1px solid red;
+}
+
+.socialmedia{
+    background-color: #181bd3;
+    width: 40%;
+    margin: auto;
+    margin-top: 5px;
+}
+.socialmedia a {
+    display: block;
+    line-height: 25px; 
+    color:white;
+    font-family: 'Times New Roman';
+    text-decoration: overline underline;
+}
+
+button{
+    border: 0;
+    margin: 10%;
+    border-top: 5px solid red;
+    border-bottom: 5px solid red;
+
+}
