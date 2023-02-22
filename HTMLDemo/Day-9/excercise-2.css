@@ -1,0 +1,26 @@
+.container{
+    
+}
+
+
+article{
+    border: red 1px solid;
+    width:210px;
+    height:300px;
+    padding: 5px;
+    display: inline-block;
+}
+
+article img {
+  padding: 5px;
+}
+
+article h3 {
+    color: rgb(236, 145, 26);
+  }
+
+  h3 span {
+    font-size: 10px;
+    color: #000;
+    margin-left:50px ;
+  }  
