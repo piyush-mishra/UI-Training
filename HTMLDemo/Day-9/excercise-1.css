@@ -1,5 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 
 .main-left{
     width:50%;
     margin:35px;
+}
+
+ul{
+    list-style: none;
+    background-color: black;
+    text-align: right;
+}
+
+li{
+    display: inline-block;
+    color: white;
+    text-decoration: underline;
+    margin-inline: 0.5rem;
 }

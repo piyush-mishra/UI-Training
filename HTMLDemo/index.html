@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Welcome : HomePage</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     </head>
     <body>
       <header>
@@ -17,7 +18,11 @@
      
 
       <section> 
-        
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium adipisci inventore rem dolor cum aliquam 
+            </p>
+            <button onclick="myclick()"> Hello</button>
+        </div>
         <h2>Welcome to the Web Development Bootcamp.</h2>
 
         <h3>Sample Content</h3>
@@ -25,11 +30,7 @@
         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
             Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, 
             and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-        
-        
-
         My Section
-    
        <ol>
          <li> Movies</li>
          <li> Year 2023 
@@ -64,12 +65,59 @@
         </dl>
     
     </section>
-
+   
       
       
       <footer>
         <small>Copyright @2023</small>
       </footer>
+      <script>
+      const typeDeifnistion = `{
+            products(filter: { sku: { in: ["VD09"] } }) {
+                items {
+                __typename
+                sku
+                
+                }
+            }
+        }`;
+
+        function myclick(){
+            var mydata = '{}';
+            var m = JSON.stringify({query:mydata});
+            var m2=JSON.parse(m);
+            console.log(m2);
+
+             $.ajax({url: "http://localhost:90/graphql",
+            method:'POST',
+          //  headers:"{'Access-Control-Allow-Headers':'*'}",
+            //contentType: "application/json",
+            //data: JSON.parse({query:`query { products(filter: { sku: { in: ["VD09"] } }) {  items {   sku   } }} `}),
+            data: JSON.stringify({
+            query: `# Welcome to Altair GraphQL Client.
+# You can send your request using CmdOrCtrl + Enter.
+
+# Enter your graphQL query here.
+{
+  products(filter: { sku: { in: ["VD09"] } }) {
+    items {
+      __typename
+      sku
+     
+    }
+  }
+}
+`,
+        variables: {
+            "filter": " {sku: {in: [\"VD09\"]}}"
+        }
+      }),
+            success: function(result){
+                     console.log(result);
+                     $("#div1").html(result);
+                    }});
+        }
+        myclick();
+      </script>
     </body>
-</html>
 </html>

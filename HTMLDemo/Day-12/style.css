@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+ --primary-color:#000;
+ --font-family:arial;
+ --secondry-color:#e1d0d0;
+}
+
+body{
+    font-family: var( --font-family);
+}
+
+main{
+    margin:0 auto;
+    background: #999;
+    padding: 10px;
+}
+section{
+    margin-bottom: 30px;
+}
+main >:first-child{
+    background: var(--secondry-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    flex-direction: column-reverse;
+}
+h1{
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+h1 + p {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+.portfolio > section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+input:is([type=text],[type=email]){
+    border: 2px solid #999;
+    border-radius: 5px;
+    padding: 2px;
+    height:28px;
+}
+
+.portfolio_card > h3 {
+    align-content: center;
+}
+
+.portfolio > section > div{
+    border:2px solid green;
+    display: flex;
+    flex-direction: column;
+}
+
+/*.portfolio__shortinto{
+    display: flex;
+    justify-content: space-between;
+}*/
+
+/* Desktop */
+@media screen and (min-width:992px){
+    main{
+       width:1200px;
+    }
+    main > :first-child{
+        flex-direction: row;
+    }
+}

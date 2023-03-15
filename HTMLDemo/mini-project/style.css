@@ -1,0 +1,40 @@
+@import url(https://fonts.google.com/download?family=Nunito);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1.5rem "Nunito", sans-sarif ;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #475569;
+    background-image: radial-gradient(whitesmoke,#475569);
+}
+
+header,nav,footer,main{
+    display: grid;
+    place-content: center;
+}
+
+header,footer{
+    position: sticky;
+    background-color: #1e293b;
+    color: white;
+}
+
+header{
+    top: 0;
+}
+
+
+
+main{
+    flex-grow: 1;
+}
+
+footer{
+    bottom: 0;
+}

@@ -1,0 +1,42 @@
+.my_container{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 576px;
+}
+.my__card{
+    width:200px;
+    height:200px;
+    border:2px solid red;
+    margin: auto;
+    background-color: red;
+}
+.my__card:hover{
+    background-color: white;
+    transition:all .8s ease;
+    transform:translate3d(200px,0,0);
+    opacity: 0;
+}
+.my_container__img {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.my_container__img > img{
+    border-radius: 10px;
+}
+
+
+@media screen and (min-width:992px){
+    .my_container {
+        flex-direction: row;
+         width:1200px;
+         margin: auto;
+    }
+    .my_container__text{
+        width: 30%;
+    }
+}
