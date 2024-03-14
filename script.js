@@ -106,6 +106,7 @@ function markAnswer(i){
         }
     })
     poll.total=poll.total+1;
+    console.log(poll.total);
     let url =`http://localhost:3000/polls/${poll.id}`;
     fetch(url,{
         method:"PATCH",
@@ -121,8 +122,17 @@ function markAnswer(i){
 }
 
 const updateAnsDom =(data,ansNode)=>{
-    console.log(data);
-    console.log(ansNode);
+    const answer =  document.getElementById(`${data._id}`);
+    const total = `${Number(answer.dataset.total)+1}`;
+    answer.dataset.total= total;
+    console.log(total);
+    for(let i of answer.children){
+        let selectedCount = data.answer.filter(item => item._id==i.dataset.id)[0].count;
+        let percentVal = `${Math.round(selectedCount*100/total)}`;
+         i.querySelector('.percentage-value').innerHTML=`${percentVal}%`;
+         i.querySelector('.percentage-bar').style.width=`${percentVal}%`;
+
+    }
 } 
 
 const initialize =(json) => {
@@ -142,14 +152,14 @@ const initialize =(json) => {
     });
     document.querySelector('.container').innerHTML = result.map(function(item,index){
         let num = Math.round(100/(item.total));
-        return `<div class="poll" id='${item.id}' data-total='${item.total}'>
+        return `<div class="poll">
         <div class="question">${item.question}</div>
-        <div class="answers">
+        <div class="answers" id='${item.id}' data-total='${item.total}'>
         ${item.answer.map(function(ie,index){
-           return `<div class="answer" data-poll='${JSON.stringify(item)}' data-count='${ie.count}' data-ans='${ie.answer}' data-index="${index}" data-id='${ie._id}' onclick="markAnswer(this)">
+           return `<div class="answer"  data-poll='${JSON.stringify(item)}' data-count='${ie.count}' data-ans='${ie.answer}' data-index="${index}" data-id='${ie._id}' onclick="markAnswer(this)">
                 ${ie.answer}
-                <span class="percentage-bar" style='width:${num*ie.count}%'></span>
                 <span class="percentage-value">${num*ie.count}%</span>
+                <span class="percentage-bar" style='width:${num*ie.count}%'></span>
             </div>`
         }).join('')}       
       </div>
